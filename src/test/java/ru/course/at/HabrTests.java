@@ -34,16 +34,16 @@ public class HabrTests {
 
     @Test
     public void changeLogTest() {
-        WebElement footerMenu = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[3]/div/div/div[3]/div/ul/li[1]/a"));
+        WebElement footerMenu = driver.findElement(By.cssSelector("a[href='/ru/docs/help/']"));
         footerMenu.click();
 
-        List<WebElement> changeLog = driver.findElements(By.cssSelector("a[href='/ru/docs/changelog/'"));
+        List<WebElement> changeLog = driver.findElements(By.cssSelector("a[href='/ru/docs/changelog/']"));
         Assertions.assertFalse(changeLog.isEmpty(), "Changelog не найден");
     }
 
     @Test
     public void searchTest() {
-        WebElement searchIcon = driver.findElement(By.xpath("//*[@id=\"app\"]/div/header/div/div/div[2]/a[1]"));
+        WebElement searchIcon = driver.findElement(By.cssSelector("[class*='tm-svg-img tm-header-user-menu__icon tm-header-user-menu__icon_search']"));
         searchIcon.click();
 
         WebElement search = driver.findElement(By.cssSelector("[class*='tm-search__input tm-input-text-decorated__input']"));
@@ -57,7 +57,7 @@ public class HabrTests {
         WebElement menu = driver.findElement(By.cssSelector("[class*='burger-button tm-header__button tm-header__burger']"));
         menu.click();
 
-        WebElement menuTest = driver.findElement(By.cssSelector("#app > div > div.tm-layout > div.expanded-menu > div > div > div.navigation-wrapper > nav > a:nth-child(9) > span"));
+        WebElement menuTest = driver.findElement(By.cssSelector("a[href='/ru/flows/quality_assurance/']"));
         menuTest.click();
     }
 }
