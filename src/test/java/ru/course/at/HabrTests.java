@@ -43,10 +43,10 @@ public class HabrTests {
 
     @Test
     public void searchTest() {
-        WebElement searchIcon = driver.findElement(By.cssSelector("[class*='tm-svg-img tm-header-user-menu__icon tm-header-user-menu__icon_search']"));
+        WebElement searchIcon = driver.findElement(By.cssSelector("[class*='tm-header-user-menu__icon_search']"));
         searchIcon.click();
 
-        WebElement search = driver.findElement(By.cssSelector("[class*='tm-search__input tm-input-text-decorated__input']"));
+        WebElement search = driver.findElement(By.cssSelector("[class*='tm-input-text-decorated__input']"));
         String input = "Selenium";
         search.sendKeys(input);
         search.submit();
@@ -54,7 +54,7 @@ public class HabrTests {
 
     @Test
     public void menuTest() {
-        WebElement menu = driver.findElement(By.cssSelector("[class*='burger-button tm-header__button tm-header__burger']"));
+        WebElement menu = driver.findElement(By.cssSelector("[class*='tm-header__burger']"));
         menu.click();
 
         WebElement menuTest = driver.findElement(By.cssSelector("a[href='/ru/flows/quality_assurance/']"));
